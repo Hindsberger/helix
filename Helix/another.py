@@ -11,7 +11,7 @@ app = Flask(__name__)
  
 def UDP_Server(out_q):
     UDP_PORT       = 5001
-    UDP_IP         = "192.168.66.3"
+    UDP_IP         = "192.168.56.103"
     UDP_bufferSize = 1024
 
     msgFromServer  = "NDI Switcher is up"
@@ -51,7 +51,7 @@ def UDP_Server(out_q):
             #ten_sec()
             print("get-ndi-sources")
             #Source 1
-            msgFromServer1 = '{"status": 0, "sources": [{"ndi-name": "MAGEWELL (USB Capture HDMI (D206191017871))", "ip-addr": "192.168.1.192:5963"}, {"ndi-name": "MAGEWELL (USB Capture HDMI (D206191017889))", "ip-addr": "192.168.1.192:5961"}]}'
+            msgFromServer1 = '{"MAGEWELL 1", "MAGEWELL 2", "MAGEWELL 3", "MAGEWELL 4"}'
             bytesToSend    = str.encode(msgFromServer1)
             UDPServerSocket.sendto(bytesToSend, address)
             #2
@@ -119,6 +119,14 @@ def UDP_Server(out_q):
             print("Get ndi config")
             msgFromServer = "1"
             bytesToSend    = str.encode(msgFromServer)
+            UDPServerSocket.sendto(bytesToSend, address)
+            
+        if msgDecode == '"MAGEWELL 1"':
+            #ten_sec()
+            print("wuhuuuu")
+            #Source 1
+            msgFromServer1 = '{"got it bitch"}'
+            bytesToSend    = str.encode(msgFromServer1)
             UDPServerSocket.sendto(bytesToSend, address)
         
             
