@@ -1,0 +1,135 @@
+
+<html>
+<head>
+<title>Helix NDI</title>
+	<link href="static/css/main.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+</head>
+<script type"text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+let name = prompt("Enter a name : "); 
+$(document).ready(function(){
+        $('#btnSend1').click(function(){
+		$.ajax({ 
+			url: "/api/" + name + "/" 
+		}).done(function(res) { 
+		/*alert(res.name);*/ 
+			}); 
+		});
+	});
+</script>	
+
+<script>
+    $(document).ready(function(){
+        $('#btnSend2').click(function(){
+            $.ajax({
+                type: 'POST',
+                url: '/Device 1',
+                
+            });
+        });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $('#btnSend3').click(function(){
+            $.ajax({
+                type: 'POST',
+                url: '/Slow_Motion',
+                
+            });
+        });
+    });
+</script>
+  
+<body>
+	<a href=name></a>
+<table width="100%">
+	<col style="width:20%">
+	<col style="width:35%">
+	<col style="width:35%">
+	<col style="width:10%">
+ 
+    <tr>
+        <th scope="col"></th>
+        <th scope="col"></th>
+	<th scope="col"></th>
+        <th scope="col"><input type="button_Settings" id="btnSend1" value="Settings"></th>
+
+    </tr>
+    <tr>
+        <th scope="row">
+		
+		<p>HDMI Input</p>
+	
+	</th>		
+	<th>
+		<p>192.168.1.1</p>
+		<p>255.255.255.0</p>
+	</th>
+        <th>
+		<p>Output: NDI Stream 1</p>
+		<p>X: 1920 Y: 1080 @ 50</p>
+	</th>
+        <th><input type="button_Setup" id="btnSend2" value="Setup"></th>
+    </tr>
+    <tr>
+        <th scope="row">
+		<p>Device 2</p>
+		<p>Input</p>
+	</th>
+        <th>
+		<p>192.168.1.2</p>
+		<p>255.255.255.0</p>
+	</th>
+	<th>
+		<p>Output: NDI Stream 2</p>
+		<p>X: 1920 Y: 1080 @ 50</p>
+	</th>
+        <th><input type="button_Setup" id="btnSend2" value="Setup"></th>
+    </tr>
+    <tr>
+        <th scope="row"><input type="button_1" id="btnSend1" value="Device 3 : Output"></th>
+        <th>
+		<p>192.168.1.3</p>
+		<p>255.255.255.0</p>
+	</th>
+	<th>
+		<p>Input: Scan Converter</p>
+		<p>X: 1920 Y: 1080 @ 50</p>
+	</th>
+        <th><input type="button_Setup" id="btnSend1" value="Setup"></th>
+    </tr>
+    <tr>
+        <th scope="row"><input type="button_2" id="btnSend1" value="Device 4 : Output"></th>
+        <th>
+		<p>192.168.1.3</p>
+		<p>255.255.255.0</p>
+	</th>
+	<th>
+		<p>Input: Test Patterns</p>
+		<p>X: 1920 Y: 1080 @ 50</p></th>
+        <th><input type="button_Setup" id="btnSend1" value="Setup"></th>
+    </tr>
+</table>
+  
+
+
+		
+
+    
+    
+
+			
+
+   
+    
+
+
+
+
+
+
+</body>
+</html>
